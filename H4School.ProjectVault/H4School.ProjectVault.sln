@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H4School.ProjectVault.Console", "..\H4School.ProjectVault.Console\H4School.ProjectVault.Console.csproj", "{54F50CE3-EA05-4207-953F-FDC58B87CA5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H4School.ProjectVault.Service", "..\H4School.ProjectVault.Service\H4School.ProjectVault.Service.csproj", "{7E01087F-3D7A-4D01-8BA8-7FF2885727B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54F50CE3-EA05-4207-953F-FDC58B87CA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F50CE3-EA05-4207-953F-FDC58B87CA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F50CE3-EA05-4207-953F-FDC58B87CA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F50CE3-EA05-4207-953F-FDC58B87CA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E01087F-3D7A-4D01-8BA8-7FF2885727B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E01087F-3D7A-4D01-8BA8-7FF2885727B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E01087F-3D7A-4D01-8BA8-7FF2885727B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E01087F-3D7A-4D01-8BA8-7FF2885727B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88A0A9AB-6BBA-46B2-B140-D129E3A93220}
+	EndGlobalSection
+EndGlobal
