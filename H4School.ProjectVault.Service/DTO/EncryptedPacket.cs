@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace H4School.ProjectVault.Service.DTO
 {
-    public class PasswordDTO
+    public class EncryptedPacket
     {
-        public byte[] HashedPassword { get; set; }
-        public byte[] Salt { get; set; }
-        public string FileName { get; set; }
+        public byte[] EncryptedSessionKey;
+        public byte[] EncryptedData;
+        public byte[] Iv;
     }
 }

@@ -38,11 +38,16 @@ class Program
     {
         Console.WriteLine("Write your wanted password: ");
         string userPassword = Console.ReadLine();
+        Console.WriteLine("Write the file name you want to save the password in: ");
+        password.FileName = Console.ReadLine();
 
-        password.Salt = PasswordHandler.GenerateSalt();
-        password.HashedPassword = PasswordHandler.HashingPasswordWithSalt(Encoding.UTF8.GetBytes(userPassword), password.Salt);
+        password.Salt = HashingPassword.GenerateSalt();
+        password.HashedPassword = HashingPassword.HashingPasswordWithSalt(Encoding.UTF8.GetBytes(userPassword), password.Salt);
 
-        Console.WriteLine($"Your password has now been hashed. {Convert.ToBase64String(password.HashedPassword)}\n Press Enter to go back to menu!");
+        FileHandler.SavePasswordInFile(password);
+
+        Console.WriteLine($"Your password has now been hashed and saved in a file.\n File name: {password.FileName}");
+        Console.WriteLine("Press Enter to return to the menu!");
         Console.ReadLine();
     }
 

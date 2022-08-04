@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace H4School.ProjectVault.Service.Services
 {
-    public class PasswordHandler
+    public class HashingPassword
     {
         public static byte[] GenerateSalt()
         {
