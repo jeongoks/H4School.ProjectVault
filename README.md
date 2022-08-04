@@ -13,5 +13,5 @@ It will be done in a Console application with a sort of Menu system to make it e
 ### Extra requirements if there's time.
 - [x] Save the added passwords to a file and encrypt it.
 - [ ] Open a file to view the encrypted files.
-- [ ] Decrypt the encrypted file.
-- [ ] Open a file to view the now decrypted file in the console.
+- [x] Decrypt the encrypted file.
+- [x] Open all files to view the now decrypted file in the console.
