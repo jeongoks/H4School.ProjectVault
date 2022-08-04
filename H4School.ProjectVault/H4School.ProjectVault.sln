@@ -11,10 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H4School.ProjectVault.Tests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecuredPasswords", "SecuredPasswords", "{47C9D598-086F-4507-A3B6-275A2759F100}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EncryptedPasswords", "EncryptedPasswords", "{5A096F96-B58A-4290-89C9-498D0DC337DE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DecryptedPasswords", "DecryptedPasswords", "{5EF51B15-4B54-4768-811D-608838CEFD2E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,10 +32,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5A096F96-B58A-4290-89C9-498D0DC337DE} = {47C9D598-086F-4507-A3B6-275A2759F100}
-		{5EF51B15-4B54-4768-811D-608838CEFD2E} = {47C9D598-086F-4507-A3B6-275A2759F100}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {88A0A9AB-6BBA-46B2-B140-D129E3A93220}
