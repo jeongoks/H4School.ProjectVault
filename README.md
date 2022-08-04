@@ -8,7 +8,7 @@ It will be done in a Console application with a sort of Menu system to make it e
 - [x] Add a password.
 - [x] Hash and add salt to the password.
 - [x] Option to show the newly added password and it's hashed code.
-- [ ] xUnit test on the methods used to hash.
+- [x] xUnit test on the methods used to hash.
 
 ### Extra requirements if there's time.
 - [x] Save the added passwords to a file and encrypt it.
