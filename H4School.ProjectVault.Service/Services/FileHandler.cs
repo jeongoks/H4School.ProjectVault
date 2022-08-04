@@ -15,8 +15,43 @@ namespace H4School.ProjectVault.Service.Services
             if (File.Exists(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + password.FileName + ".txt") == false)
             {
                 File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + password.FileName + ".txt",
-                    Convert.ToBase64String(password.HashedPassword) + Environment.NewLine
+                    password.FileName + Environment.NewLine
+                    + Convert.ToBase64String(password.HashedPassword) + Environment.NewLine
                     + Convert.ToBase64String(password.Salt) + Environment.NewLine);
+            }
+        }
+
+        /// <summary>
+        /// This method shows all hashed passwords, by using decryption on the encrypted file.
+        /// </summary>
+        public static void ShowAllHashedPassword()
+        {
+            List<PasswordDTO> passwordDTOs = new List<PasswordDTO>();
+            DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\");
+            foreach (FileInfo fileInfo in directoryInfo.GetFiles())
+            {
+                if (fileInfo.Extension == ".txt")
+                {
+                    string fileData = File.ReadAllText(fileInfo.FullName);
+                    X509Certificate2 myCertificate = Certificate.LoadCertificate(StoreLocation.CurrentUser, "CN=CryptoCert");
+
+                    string decrypted = Certificate.Decrypt(myCertificate, fileData);
+                    string[] passwords = decrypted.Split(Environment.NewLine);
+                    passwordDTOs.Add(new PasswordDTO
+                    {
+                        FileName = passwords[0],
+                        HashedPassword = Convert.FromBase64String(passwords[1]),
+                        Salt = Convert.FromBase64String(passwords[2]),
+                    });
+                }
+            }            
+
+            foreach (var item in passwordDTOs)
+            {
+                Console.WriteLine($"File name : {item.FileName}");
+                Console.WriteLine($"Hashed Password : {Convert.ToBase64String(item.HashedPassword)}");
+                Console.WriteLine($"Salt : {Convert.ToBase64String(item.Salt)}");
+                Console.WriteLine();
             }
         }
 
@@ -43,31 +78,41 @@ namespace H4School.ProjectVault.Service.Services
                 string encrypted = Certificate.Encrypt(myCertificate, fileText);
                 SavingEncryptedFiles(encrypted, fileName);
             }        
-        }
+        }        
 
-        public static void DecryptData(string fileName)
-        {
-            X509Certificate2 myCertificate = Certificate.LoadCertificate(StoreLocation.CurrentUser, "CN=CryptoCert");
-
-            var fileText = File.ReadAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\EncryptedPasswords\" + fileName + ".txt");
-            if (fileText != "")
-            {
-                string decrypted = Certificate.Decrypt(myCertificate, fileText);
-                SavingDecryptedFiles(decrypted, fileName);
-            }
-        }
-
+        /// <summary>
+        /// This method is used to override the save file of the hashed password.
+        /// </summary>
+        /// <param name="encryptedData">The encrypted data from <see cref="EncryptFile(string)"/></param>
+        /// <param name="fileName">The file which is needed to be encrypted.</param>
         public static void SavingEncryptedFiles(string encryptedData, string fileName)
         {
             if (File.ReadAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt") != "")
             {
-                File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\EncryptedPasswords\" + fileName + ".txt", encryptedData);
+                File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt", encryptedData);
             }
         }
 
-        public static void SavingDecryptedFiles(string decryptedData, string fileName)
-        {
-            File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\DecryptedPasswords" + fileName + ".txt", decryptedData);
-        }
+        //public static void DecryptData(string fileName)
+        //{
+        //    X509Certificate2 myCertificate = Certificate.LoadCertificate(StoreLocation.CurrentUser, "CN=CryptoCert");
+
+        //    var fileText = File.ReadAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt");
+        //    if (fileText != "")
+        //    {
+        //        string decrypted = Certificate.Decrypt(myCertificate, fileText);
+        //        SavingDecryptedFiles(decrypted, fileName);
+        //    }
+        //}
+
+        /// <summary>
+        /// This method is used to decrypt the encrypted file, so a user can view their hashed passwords.
+        /// </summary>
+        /// <param name="decryptedData"></param>
+        /// <param name="fileName"></param>
+        //public static void SavingDecryptedFiles(string decryptedData, string fileName)
+        //{
+        //    File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt", decryptedData);
+        //}
     }
 }

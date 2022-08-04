@@ -11,9 +11,10 @@ class Program
         while (menuChoice != "3")
         {
             Console.Clear();
-            Console.WriteLine("1. Add a password.");
-            Console.WriteLine("2. Show your now hashed password.");
+            Console.WriteLine("1. Add a password to encrypt.");
+            Console.WriteLine("2. Decrypt and show all decrypted passwords.");
             Console.WriteLine("3. Exit application.");
+            Console.WriteLine();
             Console.WriteLine("Please select any of the above to start an action:");
             menuChoice = Console.ReadLine();
 
@@ -55,7 +56,9 @@ class Program
 
     static void ShowHashedPassword()
     {
-        Console.WriteLine($"This is the hashed version of your password: {Convert.ToBase64String(password.HashedPassword)}");
+        Console.WriteLine("Below is a list of your decrypted passwords: ");
+        Console.WriteLine();
+        FileHandler.ShowAllHashedPassword();
         Console.WriteLine("Press enter to return to menu!");
         Console.ReadLine();
     }
