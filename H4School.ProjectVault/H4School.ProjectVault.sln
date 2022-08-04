@@ -9,10 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H4School.ProjectVault.Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H4School.ProjectVault.Tests", "..\H4School.ProjectVault.Tests\H4School.ProjectVault.Tests.csproj", "{8122A818-4A11-4176-9029-DB41A5C83D2B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecuredPasswords", "SecuredPasswords", "{237676CC-8821-4EA4-BA2E-B4E2CBF01102}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecretMessages", "SecretMessages", "{DBD5CEF0-C1D4-4594-AD4B-920849D0AE12}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

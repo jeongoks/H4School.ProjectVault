@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace H4School.ProjectVault.Service.DTO
 {
-    public class EncryptedPacket
+    public class EncryptedPacketDTO
     {
         public byte[] EncryptedSessionKey;
         public byte[] EncryptedData;

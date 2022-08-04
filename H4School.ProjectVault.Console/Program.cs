@@ -38,6 +38,7 @@ class Program
     {
         Console.WriteLine("Write your wanted password: ");
         string userPassword = Console.ReadLine();
+        Console.WriteLine();
         Console.WriteLine("Write the file name you want to save the password in: ");
         password.FileName = Console.ReadLine();
 
@@ -45,8 +46,9 @@ class Program
         password.HashedPassword = HashingPassword.HashingPasswordWithSalt(Encoding.UTF8.GetBytes(userPassword), password.Salt);
 
         FileHandler.SavePasswordInFile(password);
-
+        Console.WriteLine();
         Console.WriteLine($"Your password has now been hashed and saved in a file.\n File name: {password.FileName}");
+        FileHandler.EncryptFile(password.FileName);
         Console.WriteLine("Press Enter to return to the menu!");
         Console.ReadLine();
     }

@@ -9,9 +9,8 @@ namespace H4School.ProjectVault.Service.Services
 {
     public class SymmetricEncryption
     {
-        public byte[] GenerateRandomNumber()
+        public byte[] GenerateRandomNumber(int length)
         {
-            int length = 32;
             using RandomNumberGenerator randomNumberGenerator = RandomNumberGenerator.Create();
             byte[] randomNumber = new byte[length];
             randomNumberGenerator.GetBytes(randomNumber);
