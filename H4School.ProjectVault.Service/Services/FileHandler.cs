@@ -92,27 +92,5 @@ namespace H4School.ProjectVault.Service.Services
                 File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt", encryptedData);
             }
         }
-
-        //public static void DecryptData(string fileName)
-        //{
-        //    X509Certificate2 myCertificate = Certificate.LoadCertificate(StoreLocation.CurrentUser, "CN=CryptoCert");
-
-        //    var fileText = File.ReadAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt");
-        //    if (fileText != "")
-        //    {
-        //        string decrypted = Certificate.Decrypt(myCertificate, fileText);
-        //        SavingDecryptedFiles(decrypted, fileName);
-        //    }
-        //}
-
-        /// <summary>
-        /// This method is used to decrypt the encrypted file, so a user can view their hashed passwords.
-        /// </summary>
-        /// <param name="decryptedData"></param>
-        /// <param name="fileName"></param>
-        //public static void SavingDecryptedFiles(string decryptedData, string fileName)
-        //{
-        //    File.WriteAllText(@"C:\Users\Jasmin\source\repos\H4School.ProjectVault\SecuredPasswords\" + fileName + ".txt", decryptedData);
-        //}
     }
 }
