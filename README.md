@@ -12,3 +12,4 @@ It will be done in a Console application with a sort of Menu system to make it e
 
 ### Extra requirements if there's time.
 - [ ] Save the added passwords to a file and encrypt it.
+- [ ] Open a file to view the encrypted files.
