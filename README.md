@@ -15,3 +15,10 @@ It will be done in a Console application with a sort of Menu system to make it e
 - [ ] Open a file to view the encrypted files.
 - [x] Decrypt the encrypted file.
 - [x] Open all files to view the now decrypted file in the console.
+
+## Dependencies:
+`H4School.ProjectVault.Tests:`
+- Microsoft.NET.Test.Sdk
+- xunit
+- xunit.runner.visualstudio
+- coverlet.collector
